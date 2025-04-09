@@ -1,6 +1,8 @@
 const formLogin = document.getElementById("form-login");
 const messageError = document.getElementById("message-error-login");
-const btnLogin = document.getElementById('submit-login')
+const btnLogin = document.getElementById('submit-login');
+const btnSesion = document.getElementById('btn-sesion')
+const btnRegister = document.getElementById('btn-register')
 
 const API_KEY = 'AIzaSyCtIekGqf_dnxqrpBuNu1aBW5oRqGQMSG8'; // Reemplaza con tu clave API
 const SPREADSHEET_ID = '1etvlT5KE4mg8KLSiaiT_GNQNMSXeJbGdyJQTLyi-3ms'; // Reemplaza con tu ID de hoja de cálculo
@@ -45,7 +47,9 @@ export const GET_DATA_LOGIN = () => {
                 pUser.style.display = "block"
                 btnLogout.style.display = "block"
                 document.getElementById('closed').click()
-                localStorage.setItem("username", emailFiltrado.username);
+                localStorage.setItem("username", emailFiltrado.username)
+                btnSesion.style.display = "none"
+                btnRegister.style.display = "none"
             }            
         } catch (error) {
             console.log(error)
@@ -61,5 +65,7 @@ export const LOGOUT = () => {
         localStorage.removeItem("username")
         pUser.style.display = "none"
         btnLogout.style.display = "none"
+        btnSesion.style.display = "block"
+                btnRegister.style.display = "block"
     })
 }

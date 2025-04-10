@@ -21,12 +21,12 @@ export const GET_DATA = () => {
             const data = await response.json()
             const dataSheets = data.values.map((fila) => {
                 return {
-                    username: fila[0], // Cambia el índice según la columna que necesites
-                    email: fila[1], // Cambia el índice según la columna que necesites
-                    password: fila[2]// Agrega más campos según sea necesario
+                    username: fila[0], 
+                    email: fila[1], 
+                    password: fila[2]
                 };
             }) // Aquí obtienes las filas de la hoja de cálculo
-            console.log(dataSheets);
+            //console.log(dataSheets);
 
             const userFiltrado = dataSheets.find(e => e.username == inputUser) // filtramos el nombre de usuario
             const emailFiltrado = dataSheets.find(e => e.email == inputEmail) // filtramos el email
@@ -162,11 +162,11 @@ export const POST_DATA = () => {
 
             if (postResponse.ok) {
                 const dataResponse = await postResponse.json();
-                console.log("Datos enviados a Google Sheets:", dataResponse);
+                //console.log("Datos enviados a Google Sheets:", dataResponse);
                 messageError.style.color = "green";
                 messageError.textContent = "Registro exitoso";
             } else {
-                console.error("Error al enviar datos:", await postResponse.text());
+                //console.error("Error al enviar datos:", await postResponse.text());
                 messageError.style.color = "red";
                 messageError.textContent = "Error al registrar los datos";
             }

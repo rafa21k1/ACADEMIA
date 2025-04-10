@@ -37,9 +37,7 @@
             </div>
         </div>
     </div>
-
     <!-- Diseño de la Web -->
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
         <div class="container-fluid">
@@ -74,8 +72,6 @@
                 <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-sesion">
                     Iniciar Sesión
                 </button>
-
-
                 <!-- Modal login -->
                 <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -102,22 +98,18 @@
                                 <p id="message-error-login" class="m-3 p 3"></p>
                             </div>
                             <div class="modal-footer">
-
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closed">Close</button>
                                 <button type="button" class="btn btn-primary" id="submit-login">Login</button>
                             </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
-
                 <!-- Button trigger Registro -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                     id="btn-register">
                     Registro
                 </button>
-
                 <!-- Modal Registro-->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -147,22 +139,16 @@
                                 <p id="message-error-register" class="m-3 p 3"></p>
                             </div>
                             <div class="modal-footer">
-
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <input type="submit" class="btn btn-primary" id="submit-register" input>
                             </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </nav>
-
-
-
     <!-- Dar la bienvenida al usuario, mostrar apartados de mas contenido y un mensaje dinámido para la próxima fecha de exámenes -->
     <div class="welcome">
         <div class="welcome_container">
@@ -174,7 +160,6 @@
             </section>
         </div>
     </div>
-
     <main>
         <div class="container-about">
             <h2 class="subtitle">¿Qué aprenderás en este curso?</h2>
@@ -182,8 +167,7 @@
                 Exteriores, Gestión de Proyectos, Ingenierías,
                 Medio Ambiente y más)
             </p>
-        </div>
-        <!-- Texto animado -->
+        </div>        <!-- Texto animado -->
         <div class="container-text">
             <h2 class="title">
                 <span class="title-word title-word-1">Próximo</span>
@@ -195,32 +179,35 @@
     <!-- footer -->
     <footer>
         <nav class="navbar navbar-expand-lg bg-body-tertiary m-auto">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Contacto</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
+          <div class="container-fluid">
+            <a class="navbar-brand">Conoce nuestras redes sociales</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                </li>
+              </ul>
             </div>
+          </div>
         </nav>
-    </footer>
-    
+      </footer>      
+    <!-- scripts para autenticación de google via api -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
 

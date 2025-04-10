@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,128 +13,217 @@
     <link rel="stylesheet" href="../CSS/body.css" />
     <script type="module" src="../JS/main.js"></script>
 </head>
+
 <body>
-<!-- Diseño de la Web -->
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html"><img src="../images/Logo.webp" alt="Bootstrap" width="40" height="35"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse align-content-center" id="navbarNavDropdown">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/metodología.html">Metodología</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="../HTML/cursos.html">Cursos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/oposiciones.html">Oposiciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../HTML/contacto.html">Contacto</a>
-                </li>
-            </ul>
-            <!-- Button trigger modal login -->
-            <p id = 'user' class="text-white"></p>
-            <button type="button" class="btn btn-danger m-1" id="logout">
-                Cerrar Sesión
+    <!-- Diseño de la Web -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.webp" alt="Bootstrap" width="40"
+                    height="35"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-sesion">
-                Iniciar Sesión
-            </button>
+            <div class="collapse navbar-collapse align-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/metodología.html">Metodología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../HTML/cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/oposiciones.html">Oposiciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Button trigger modal login -->
+                <p id='user' class="text-white"></p>
+                <button type="button" class="btn btn-danger m-1" id="logout">
+                    Cerrar Sesión
+                </button>
+                <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    id="btn-sesion">
+                    Iniciar Sesión
+                </button>
 
+                <!-- Modal login -->
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="d-flex" id="form-login">
 
-            <!-- Modal login -->
-            <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="d-flex" id="form-login">
-                                
-                                <div class="mb-2 p-1">
-                                    <input type="email" class="form-control me-auto" placeholder="E-mail"
-                                        name="email" id="emailUser-login" aria-describedby="emailHelp" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required>
-                                </div>
-                                <div class="mb-2 p-1">
-                                    <input type="password" class="form-control me-auto" placeholder="Password"
-                                        name="password" id="passUser-login">
-                                </div>
-                        </div>
-                        <div class="mb-2 p-1">
-                            <p id="message-error-login" class="m-3 p 3"></p>
-                        </div>
-                        <div class="modal-footer">
+                                    <div class="mb-2 p-1">
+                                        <input type="email" class="form-control me-auto" placeholder="E-mail"
+                                            name="email" id="emailUser-login" aria-describedby="emailHelp"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="password" class="form-control me-auto" placeholder="Password"
+                                            name="password" id="passUser-login">
+                                    </div>
+                            </div>
+                            <div class="mb-2 p-1">
+                                <p id="message-error-login" class="m-3 p 3"></p>
+                            </div>
+                            <div class="modal-footer">
 
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closed">Close</button>
-                            <button type="button" class="btn btn-primary" id="submit-login">Login</button>
-                        </div>
-                        </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    id="closed">Close</button>
+                                <button type="button" class="btn btn-primary" id="submit-login">Login</button>
+                            </div>
+                            </form>
 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger Registro -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    id="btn-register">
+                    Registro
+                </button>
+
+                <!-- Modal Registro-->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="d-flex" id="form-register">
+                                    <div class="mb-2 p-1">
+                                        <input type="text" class="form-control me-auto" placeholder="Username"
+                                            name="username" id="nameUser-register" aria-label="default input example">
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="email" class="form-control me-auto" placeholder="E-mail"
+                                            name="email" id="emailUser-register" aria-describedby="emailHelp"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="password" class="form-control me-auto" placeholder="Password"
+                                            name="password" id="passUser-register">
+                                    </div>
+                            </div>
+                            <div class="mb-2 p-1">
+                                <p id="message-error-register" class="m-3 p 3"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="submit" class="btn btn-primary" id="submit-register" input>
+                            </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </nav>
+    <div class="titulo-oposiciones">
+        <h2>Cursos Profesionales</h2>
+    </div>
 
-            <!-- Button trigger Registro -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                id="btn-register">
-                Registro
-            </button>
+    <!-- Bloque de 5 columnas con cursos -->
+    <div class="oposiciones">
+        <div class="oposicion">
+            <h3>Desarrollo Web</h3>
+            <p class="descripcion">Aprende a crear sitios y aplicaciones web desde cero.</p>
+            <p><strong>Requisitos:</strong> Conocimientos básicos de informática.</p>
+            <p><strong>Fecha de inicio:</strong> 20/05/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
 
-            <!-- Modal Registro-->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="d-flex" id="form-register">
-                                <div class="mb-2 p-1">
-                                    <input type="text" class="form-control me-auto" placeholder="Username"
-                                        name="username" id="nameUser-register" aria-label="default input example">
-                                </div>
-                                <div class="mb-2 p-1">
-                                    <input type="email" class="form-control me-auto" placeholder="E-mail"
-                                        name="email" id="emailUser-register" aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                                </div>
-                                <div class="mb-2 p-1">
-                                    <input type="password" class="form-control me-auto" placeholder="Password"
-                                        name="password" id="passUser-register">
-                                </div>
-                        </div>
-                        <div class="mb-2 p-1">
-                            <p id="message-error-register" class="m-3 p 3"></p>
-                        </div>
-                        <div class="modal-footer">
+        <div class="oposicion">
+            <h3>Marketing Digital</h3>
+            <p class="descripcion">Domina las herramientas y estrategias del marketing online.</p>
+            <p><strong>Requisitos:</strong> Mayor de edad, acceso a internet.</p>
+            <p><strong>Fecha de inicio:</strong> 01/06/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
 
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" id="submit-register" input>
-                        </div>
-                        </form>
+        <div class="oposicion">
+            <h3>Ciberseguridad</h3>
+            <p class="descripcion">Protege redes, sistemas y datos frente a amenazas digitales.</p>
+            <p><strong>Requisitos:</strong> Conocimientos en redes o informática.</p>
+            <p><strong>Fecha de inicio:</strong> 15/06/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
 
-                    </div>
-                </div>
-            </div>
+        <div class="oposicion">
+            <h3>Administración Empresarial</h3>
+            <p class="descripcion">Curso práctico sobre gestión de empresas y finanzas.</p>
+            <p><strong>Requisitos:</strong> Bachillerato o experiencia laboral.</p>
+            <p><strong>Fecha de inicio:</strong> 05/07/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
 
+        <div class="oposicion">
+            <h3>Diseño Gráfico</h3>
+            <p class="descripcion">Crea contenido visual con Photoshop, Illustrator y más.</p>
+            <p><strong>Requisitos:</strong> Gusto por lo visual y creatividad.</p>
+            <p><strong>Fecha de inicio:</strong> 18/07/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
+        <!-- Footer que ocupa las 5 columnas -->
+        <div class="oposicion-footer">
+            <p>Descubre todos nuestros cursos profesionales diseñados para mejorar tu perfil laboral y abrir nuevas
+                oportunidades. ¡Empieza hoy tu camino hacia el éxito!</p>
+            <a href="../HTML/contacto.html" class="btn-contacto">Solicita información</a>
         </div>
     </div>
-</nav>
-
+    <footer>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary m-auto">
+            <div class="container-fluid">
+                <a class="navbar-brand">Conoce nuestras redes sociales</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.facebook.com" target="_blank"
+                                rel="noopener noreferrer">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com" target="_blank"
+                                rel="noopener noreferrer">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.twitter.com" target="_blank"
+                                rel="noopener noreferrer">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com" target="_blank"
+                                rel="noopener noreferrer">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
 </body>
+
 </html>

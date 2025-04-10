@@ -19,7 +19,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.webp" alt="Bootstrap" width="40" height="35"></a>
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.webp" alt="Bootstrap" width="40"
+                    height="35"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,15 +44,14 @@
                     </li>
                 </ul>
                 <!-- Button trigger modal login -->
-                <p id = 'user' class="text-white"></p>
+                <p id='user' class="text-white"></p>
                 <button type="button" class="btn btn-danger m-1" id="logout">
                     Cerrar Sesión
                 </button>
-                <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" id="btn-sesion">
+                <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    id="btn-sesion">
                     Iniciar Sesión
                 </button>
-
-
                 <!-- Modal login -->
                 <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -64,10 +64,10 @@
                             </div>
                             <div class="modal-body">
                                 <form class="d-flex" id="form-login">
-                                    
                                     <div class="mb-2 p-1">
                                         <input type="email" class="form-control me-auto" placeholder="E-mail"
-                                            name="email" id="emailUser-login" aria-describedby="emailHelp" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  required>
+                                            name="email" id="emailUser-login" aria-describedby="emailHelp"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
                                     </div>
                                     <div class="mb-2 p-1">
                                         <input type="password" class="form-control me-auto" placeholder="Password"
@@ -78,12 +78,11 @@
                                 <p id="message-error-login" class="m-3 p 3"></p>
                             </div>
                             <div class="modal-footer">
-
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closed">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    id="closed">Close</button>
                                 <button type="button" class="btn btn-primary" id="submit-login">Login</button>
                             </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
@@ -93,7 +92,6 @@
                     id="btn-register">
                     Registro
                 </button>
-
                 <!-- Modal Registro-->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -112,7 +110,8 @@
                                     </div>
                                     <div class="mb-2 p-1">
                                         <input type="email" class="form-control me-auto" placeholder="E-mail"
-                                            name="email" id="emailUser-register" aria-describedby="emailHelp" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                            name="email" id="emailUser-register" aria-describedby="emailHelp"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                                     </div>
                                     <div class="mb-2 p-1">
                                         <input type="password" class="form-control me-auto" placeholder="Password"
@@ -123,12 +122,10 @@
                                 <p id="message-error-register" class="m-3 p 3"></p>
                             </div>
                             <div class="modal-footer">
-
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <input type="submit" class="btn btn-primary" id="submit-register" input>
                             </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
@@ -136,7 +133,92 @@
             </div>
         </div>
     </nav>
-    
-    </body>
+    <!-- Título principal -->
+    <div class="titulo-oposiciones">
+        <h2>Oposiciones</h2>
+    </div>
+    <!-- Bloque de 5 columnas con oposiciones -->
+    <div class="oposiciones">
+        <div class="oposicion">
+            <h3>Guardia Civil</h3>
+            <p class="descripcion">Oposición para acceder al cuerpo de la Guardia Civil.</p>
+            <p><strong>Requisitos:</strong> Nacionalidad española, sin antecedentes penales.</p>
+            <p><strong>Fecha de examen:</strong> 15/06/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
 
+        <div class="oposicion">
+            <h3>Policía Nacional</h3>
+            <p class="descripcion">Acceso a la escala básica de la Policía Nacional.</p>
+            <p><strong>Requisitos:</strong> Mayor de edad, bachillerato finalizado.</p>
+            <p><strong>Fecha de examen:</strong> 22/07/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
+
+        <div class="oposicion">
+            <h3>Tropa y Marinería</h3>
+            <p class="descripcion">Ingreso a las Fuerzas Armadas.</p>
+            <p><strong>Requisitos:</strong> Entre 18 y 29 años, nacionalidad española o comunitaria.</p>
+            <p><strong>Fecha de examen:</strong> 10/05/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
+
+        <div class="oposicion">
+            <h3>Administración</h3>
+            <p class="descripcion">Puesto administrativo en la AGE.</p>
+            <p><strong>Requisitos:</strong> Graduado en ESO mínimo.</p>
+            <p><strong>Fecha de examen:</strong> 01/09/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
+
+        <div class="oposicion">
+            <h3>Educación Primaria</h3>
+            <p class="descripcion">Plazas para maestros de primaria.</p>
+            <p><strong>Requisitos:</strong> Grado en Magisterio o equivalente.</p>
+            <p><strong>Fecha de examen:</strong> 10/10/2025</p>
+            <a href="#" class="temario-link">Ver temario</a>
+        </div>
+        <!-- Bloque final que ocupa las 5 columnas -->
+        <div class="oposicion-footer">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae lacus nec ligula gravida
+                dapibus. Curabitur blandit augue sed nisi tincidunt accumsan.</p>
+            <a href="../HTML/contacto.html" class="btn-contacto">Solicita información</a>
+        </div>
+    </div>
+    <footer>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary m-auto">
+            <div class="container-fluid">
+                <a class="navbar-brand">Conoce nuestras redes sociales</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.facebook.com" target="_blank"
+                                rel="noopener noreferrer">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com" target="_blank"
+                                rel="noopener noreferrer">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.twitter.com" target="_blank"
+                                rel="noopener noreferrer">Twitter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.youtube.com" target="_blank"
+                                rel="noopener noreferrer">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+</body>
 </html>

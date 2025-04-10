@@ -144,10 +144,106 @@ body {
     color: aliceblue;
 }
 
-footer {
-    background-color: #ffffff;
-    padding: 5px;
+.titulo-oposiciones {
     text-align: center;
+    margin: 40px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.titulo-oposiciones h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.oposiciones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #eee;
+}
+
+.oposicion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.oposicion h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.oposicion .descripcion {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.oposicion p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.temario-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #007bff;
     color: white;
-    margin-top: 260px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.temario-link:hover {
+    background-color: #0056b3;
+}
+
+/* Bloque que ocupa las 5 columnas */
+.oposicion-footer {
+    grid-column: span 5;
+    background-color: #eee;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.btn-contacto {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #218838;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    /* color de fondo opcional */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    /* sombra opcional */
 }

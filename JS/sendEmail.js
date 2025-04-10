@@ -1,6 +1,6 @@
 
-    (function(){emailjs.init("6TF1Tug42cmB_gT-r")})(); // Cargamos EmailJS con el Key
-
+    //(function(){emailjs.init("6TF1Tug42cmB_gT-r")})(); // Cargamos EmailJS con el Key
+    (function(){emailjs.init("U76eoEH78vDjQq9lT")})(); // Cargamos EmailJS con el Key
 
     const form = document.getElementById("form")
     form.addEventListener("submit", function(event) {
@@ -14,10 +14,12 @@
         
 
         // Cargamos el ServiceId y el TemplateId de EmailJS
-        emailjs.send("service_suzf1qp", "template_ks9915v", datosInputs)
+        emailjs.send("service_vx78nrt", "template_249jsef", datosInputs)
             .then(function(response) {
+                alert("Ya lo tienes, hemos enviado tu solicitud a la academia, nos ponderemos en contacto contigo lo antes posible.");
                 console.log("Correo enviado con éxito:", response);
             }, function(error) {
+                alert("Lo sentimos a ocurrido un error, por favor vuelve a intentarlo más tarde.");
                 console.error("Error al enviar el correo:", error.text);
             });
     });

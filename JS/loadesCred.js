@@ -1,3 +1,5 @@
+//Funcion de Google API para acceder a la autenticacion de Google y a la API de Google Sheets
+
 const CLIENT_ID = '579899173082-010suqonjvrore9vh0m16gkbv9co4r41.apps.googleusercontent.com';
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets';
 

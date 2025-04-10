@@ -19,17 +19,17 @@ export const GET_DATA_LOGIN = () => {
         try {
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`)
             const data = await response.json()
-            const dataSheets = data.values.map((fila) => {
+            const dataSheets = data.values.map((fila) => { // formateamos un objeto con los datos de la hoja de calculo
                 return {
-                    username: fila[0], // Cambia el índice según la columna que necesites
-                    email: fila[1], // Cambia el índice según la columna que necesites
-                    password: fila[2]// Agrega más campos según sea necesario
+                    username: fila[0],
+                    email: fila[1], 
+                    password: fila[2]
                 };
-                }) // Aquí obtienes las filas de la hoja de cálculo
-            console.log(dataSheets);
+                })
+            // console.log(dataSheets)
             
             const emailFiltrado = dataSheets.find(e => e.email == inputEmail) // filtramos el email
-            const passFiltrada = dataSheets.find(e => e.password == inputPassword) 
+            const passFiltrada = dataSheets.find(e => e.password == inputPassword) // filtrmos la contraseña
                         
             if (emailFiltrado === undefined) {
                 messageError.style.color = "red";
@@ -61,11 +61,11 @@ export const LOGOUT = () => {
     const btnLogout = document.getElementById('logout')
     const pUser = document.getElementById('user')
     btnLogout.addEventListener('click', () => {
-        console.log("cerrar sesion")
+        
         localStorage.removeItem("username")
         pUser.style.display = "none"
         btnLogout.style.display = "none"
         btnSesion.style.display = "block"
-                btnRegister.style.display = "block"
+        btnRegister.style.display = "block"
     })
 }

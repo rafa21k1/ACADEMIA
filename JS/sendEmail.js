@@ -1,5 +1,5 @@
 
-    (function(){emailjs.init("6TF1Tug42cmB_gT-r")})();
+    (function(){emailjs.init("6TF1Tug42cmB_gT-r")})(); // Cargamos EmailJS con el Key
 
 
     const form = document.getElementById("form")
@@ -13,7 +13,7 @@
         datosInputs.provincia = provincia; // Agrega la provincia a los datos de entrada
         
 
-        // Aquí puedes realizar la lógica para enviar el correo electrónico utilizando emailjs
+        // Cargamos el ServiceId y el TemplateId de EmailJS
         emailjs.send("service_suzf1qp", "template_ks9915v", datosInputs)
             .then(function(response) {
                 console.log("Correo enviado con éxito:", response);

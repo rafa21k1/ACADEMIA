@@ -75,20 +75,11 @@
 
     // Recibir mensajes del servidor
     socket.on('chat message', (msg) => {
-    const messages = document.getElementById('chat-messages');
-    const newMessage = document.createElement('div');
-    newMessage.textContent = msg;
-
-    // Diferenciar mensajes del usuario y de otros
-    if (msg.startsWith('Tú:')) {
-        newMessage.classList.add('message', 'user');
-    } else {
-        newMessage.classList.add('message', 'other');
-    }
-
-    messages.appendChild(newMessage);
-    messages.scrollTop = messages.scrollHeight; // Desplaza hacia abajo automáticamente
-});
+        const messages = document.getElementById('chat-messages');
+        const newMessage = document.createElement('div');
+        newMessage.textContent = msg;
+        messages.appendChild(newMessage);
+    });
 </script>
 
 </body>

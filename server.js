@@ -5,7 +5,7 @@ const { Server } = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
-
+const socket = io('https://websocket-chat.onrender.com');
 // Servir archivos estáticos (HTML, CSS, JS)
 app.use(express.static(__dirname + '/'));
 

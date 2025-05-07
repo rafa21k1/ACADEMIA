@@ -7,8 +7,8 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 // Servir archivos estáticos (HTML, CSS, JS)
-app.use(express.static(__dirname + '/'));
-
+//app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname + '/public'));
 // Manejar conexiones de Socket.IO
 io.on('connection', (socket) => {
     console.log('Un usuario se ha conectado');

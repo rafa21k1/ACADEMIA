@@ -9,6 +9,11 @@ const io = new Server(server);
 // Servir archivos estáticos (HTML, CSS, JS)
 //app.use(express.static(__dirname + '/'));
 app.use(express.static(__dirname + '/public'));
+
+// Otras rutas deben ir después
+app.get('/otra-ruta', (req, res) => {
+    res.send('Otra ruta');
+});
 // Manejar conexiones de Socket.IO
 io.on('connection', (socket) => {
     console.log('Un usuario se ha conectado');

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('connect', () => {
         console.log('Conectado al servidor');
         connectionStatus.textContent = 'Conectado';
-        document.querySelector('.status-dot').classList.add('connected');
+        document.querySelector('.spinner-border spinner-border-sm text-secondary').classList.add('connected');
         
         // Asignar un color a nuestro usuario
         userColors[socket.id] = getRandomColor();
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('disconnect', () => {
         console.log('Desconectado del servidor');
         connectionStatus.textContent = 'Desconectado';
-        document.querySelector('.status-dot').classList.remove('connected');
+        document.querySelector('.spinner-border spinner-border-sm text-secondary').classList.remove('connected');
     });
     
     // Manejar errores

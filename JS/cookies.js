@@ -38,6 +38,3 @@ export const LOAD = () => {
             btnLogout.style.display = "none"
         }
 }
-
-
-    

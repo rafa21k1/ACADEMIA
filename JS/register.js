@@ -15,6 +15,9 @@ export const GET_DATA = () => {
         const inputUser = datosInputs.username
         const inputEmail = datosInputs.email
         const inputPassword = datosInputs.password
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; // Al menos 8 caracteres, 1 mayúscula, 1 minúscula y 1 número
+        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;// @ obligatorio, al menos 2 letras después del punto
+        const usernameRegex = /^.{3,}$/; // Al menos 3 caracteres
 
         try {
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`)
@@ -30,27 +33,43 @@ export const GET_DATA = () => {
 
             const userFiltrado = dataSheets.find(e => e.username == inputUser) // filtramos el nombre de usuario
             const emailFiltrado = dataSheets.find(e => e.email == inputEmail) // filtramos el email
-            const passFiltrada = dataSheets.find(e => e.password == inputPassword)
+            
             // Si el dato recogido es undefined es porque no está en el Json, caso contrario ya existe y no permitirá registrare
-            console.log(inputUser, userFiltrado, emailFiltrado, passFiltrada)
-            if (userFiltrado === '') {
+            console.log(inputUser.length)
+            console.log(emailFiltrado)
+            //filtramos el input ingresado por el usuario y lo comparamos con el regex
+            if (!usernameRegex.test(inputUser.trim()) && inputUser.trim().length > 0) {
+                messageError.style.color = "red";
+                messageError.textContent = "El nombre de usuario debe tener al menos 3 caracteres";
+                btnSubmit.disabled = true;
+            } else if (!emailRegex.test(inputEmail.trim()) && inputEmail.trim().length > 0) {
+                messageError.style.color = "red";
+                messageError.textContent = "El email debe tener un formato válido";
+                btnSubmit.disabled = true;
+            }
+            else if (!passwordRegex.test(inputPassword.trim()) && inputPassword.trim().length > 0) {
+                messageError.style.color = "red";
+                messageError.textContent = "La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula y 1 número";
+                btnSubmit.disabled = true;
+            } else if (userFiltrado === '') {
                 messageError.textContent = '';
                 btnSubmit.disabled = false;
-            }
-            else if (userFiltrado !== undefined) {
+            } else if (userFiltrado !== undefined) {
                 messageError.style.color = "red";
                 messageError.textContent = `El usuario ${inputUser} ya está registrado`;
                 btnSubmit.disabled = true;
-            }
-            else if (emailFiltrado !== undefined) {
+            } else if (userFiltrado === undefined || inputUser.trim().length === 0) {
+                messageError.textContent = '';
+                btnSubmit.disabled = false
+            } else if (emailFiltrado === '') {
+                messageError.textContent = '';
+                btnSubmit.disabled = false;
+            } else if (emailFiltrado !== undefined || inputEmail.trim().length === 0) {
                 messageError.style.color = "red";
                 messageError.textContent = `El email ${inputEmail} ya está registrado`;
                 btnSubmit.disabled = true;
-            } else if (userFiltrado === undefined) {
-                messageError.textContent = '';
-                messageError.style.color = "green";
-                btnSubmit.disabled = false
-            }
+            } 
+            
         } catch (error) {
             console.log(error)
         }
@@ -177,4 +196,3 @@ export const POST_DATA = () => {
         }
     });
 };
-

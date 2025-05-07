@@ -15,6 +15,7 @@ export const GET_DATA_LOGIN = () => {
         const datosInputs = Object.fromEntries(formData);
         const inputEmail = datosInputs.email
         const inputPassword = datosInputs.password
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         
         try {
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`)
@@ -30,8 +31,13 @@ export const GET_DATA_LOGIN = () => {
             
             const emailFiltrado = dataSheets.find(e => e.email == inputEmail) // filtramos el email
             const passFiltrada = dataSheets.find(e => e.password == inputPassword) // filtrmos la contraseña
-                        
-            if (emailFiltrado === undefined) {
+            
+            if (!emailRegex.test(inputEmail.trim()) && inputEmail.trim().length > 0) {
+                messageError.style.color = "red";
+                messageError.textContent = "El email debe tener un formato válido";
+                btnSubmit.disabled = true;
+            }
+            else if (emailFiltrado === undefined) {
                 messageError.style.color = "red";
                 messageError.textContent = `El usuario ${inputEmail} no está registrado`;
                 

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat en tiempo real</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script type="module" src="../JS/main.js"></script>
+    <script src="../JS/loadesCred.js"></script>
+    <script src="../JS/login.js" defer></script>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.webp" alt="Bootstrap" width="40"
+                    height="35"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse align-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/metodología.html">Metodología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/oposiciones.html">Oposiciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../HTML/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../public/index.html">Chat</a>
+                    </li>
+                </ul>
+                <!-- Button trigger modal login -->
+                <p id='user' class="text-white"></p>
+                <button type="button" class="btn btn-danger m-1" id="logout">
+                    Cerrar Sesión
+                </button>
+                <button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    id="btn-sesion">
+                    Iniciar Sesión
+                </button>
+
+                <!-- Modal login -->
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="d-flex" id="form-login">
+
+                                    <div class="mb-2 p-1">
+                                        <input type="email" class="form-control me-auto" placeholder="E-mail"
+                                            name="email" id="emailUser-login" aria-describedby="emailHelp" required>
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="password" class="form-control me-auto" placeholder="Password"
+                                            name="password" id="passUser-login">
+                                    </div>
+                            </div>
+                            <div class="mb-2 p-1">
+                                <p id="message-error-login" class="m-3 p 3"></p>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    id="closed">Close</button>
+                                <button type="button" class="btn btn-primary" id="submit-login">Login</button>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger Registro -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    id="btn-register">
+                    Registro
+                </button>
+
+                <!-- Modal Registro-->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="d-flex" id="form-register">
+                                    <div class="mb-2 p-1">
+                                        <input type="text" class="form-control me-auto" placeholder="Username"
+                                            name="username" id="nameUser-register" aria-label="default input example">
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="email" class="form-control me-auto" placeholder="E-mail"
+                                            name="email" id="emailUser-register" aria-describedby="emailHelp" required>
+                                    </div>
+                                    <div class="mb-2 p-1">
+                                        <input type="password" class="form-control me-auto" placeholder="Password"
+                                            name="password" id="passUser-register">
+                                    </div>
+                            </div>
+                            <div class="mb-2 p-1">
+                                <p id="message-error-register" class="m-3 p 3"></p>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <input type="submit" class="btn btn-primary" id="submit-register" input>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- chat -->
+    <div class="container py-4">
+        <div class="card shadow">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h1 class="h5 mb-0">WebSocket Chat</h1>
+                <div class="d-flex align-items-center">
+                    <span id="connection-status" class="me-2 text-muted">Conectando...</span>
+                    <span class="spinner-border spinner-border-sm text-secondary" role="status"></span>
+                </div>
+            </div>
+
+            <div class="row g-0">
+                <!-- Sidebar de usuarios -->
+                <div class="col-md-3 border-end p-3">
+                    <h2 class="h6">Usuarios</h2>
+                    <ul id="users-list" class="list-group list-group-flush"></ul>
+                </div>
+
+                <!-- Área de chat -->
+                <div class="col-md-9 d-flex flex-column">
+                    <div id="chat-messages" class="flex-grow-1 p-3 overflow-auto border-bottom" style="height: 400px;"></div>
+
+                    <div id="typing-indicator" class="px-3 text-muted small fst-italic"></div>
+
+                    <form id="chat-form" class="d-flex align-items-center p-3 gap-2">
+                        <input
+                            id="msg"
+                            type="text"
+                            class="form-control"
+                            placeholder="Escribe un mensaje..."
+                            required
+                            autocomplete="off"
+                        />
+                        <div class="form-check me-2">
+                            <input class="form-check-input" type="checkbox" id="use-agent" checked />
+                            <label class="form-check-label" for="use-agent">
+                                Usar Agente
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="main"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    // Enviar un mensaje al servidor
+    document.getElementById('chat-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = document.getElementById('msg').value;
+        socket.emit('chat message', msg);
+        document.getElementById('msg').value = '';
+    });
+
+    // Recibir mensajes del servidor
+    socket.on('chat message', (msg) => {
+        const messages = document.getElementById('chat-messages');
+        const newMessage = document.createElement('div');
+        newMessage.textContent = msg;
+        messages.appendChild(newMessage);
+    });
+</script>
+
+</body>
+</html>

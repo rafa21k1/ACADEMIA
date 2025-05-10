@@ -1,5 +1,4 @@
 
-    //(function(){emailjs.init("6TF1Tug42cmB_gT-r")})(); // Cargamos EmailJS con el Key
     (function(){emailjs.init("U76eoEH78vDjQq9lT")})(); // Cargamos EmailJS con el Key
 
     const form = document.getElementById("form")
@@ -9,7 +8,6 @@
         const formData = new FormData(form);
         const datosInputs = Object.fromEntries(formData);
         const provincia = document.getElementById("userProvince").value;
-
         datosInputs.provincia = provincia; // Agrega la provincia a los datos de entrada
         
 

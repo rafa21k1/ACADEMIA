@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body>    
     <!-- Modal para el aviso de cookies -->
     <div class="modal" tabindex="-1" id="modal-cookies">
         <div class="modal-dialog">
@@ -39,6 +39,7 @@
     </div>
     <!-- Diseño de la Web -->
     <!-- Navbar -->
+    <div id="app"></div> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark m-auto">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./images/Logo.webp" alt="Bootstrap" width="40" height="35"></a>
@@ -63,9 +64,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./HTML/contacto.html">Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://academia-wbiu.onrender.com/index.html">Chat</a>
-                    </li>
+                    
                 </ul>
                 <!-- Button trigger modal login -->
                 <p id='user' class="text-white"></p>
@@ -88,7 +87,6 @@
                             </div>
                             <div class="modal-body">
                                 <form class="d-flex" id="form-login">
-
                                     <div class="mb-2 p-1">
                                         <input type="email" class="form-control me-auto" placeholder="E-mail"
                                             name="email" id="emailUser-login" aria-describedby="emailHelp" required>
@@ -155,6 +153,8 @@
             </div>
         </div>
     </nav>
+    
+        
     <!-- Dar la bienvenida al usuario, mostrar apartados de mas contenido y un mensaje dinámido para la próxima fecha de exámenes -->
     <div class="welcome">
         <div class="welcome_container">

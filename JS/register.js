@@ -77,6 +77,7 @@ export const GET_DATA = () => {
 }
 
 // autenticamos con ID de clientes OAuth 2.0
+// autenticamos con ID de clientes OAuth 2.0
 let accessToken = "";
 
 function initOAuth() {

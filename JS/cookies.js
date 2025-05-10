@@ -25,9 +25,7 @@ export const cookies = () => {
 
 export const LOAD = () => {  
     const pUser = document.getElementById('user');
-        const btnLogout = document.getElementById('logout');
-
-        
+        const btnLogout = document.getElementById('logout');        
 
         if (localStorage.getItem("username") !== null) {
             pUser.style.display = "block"

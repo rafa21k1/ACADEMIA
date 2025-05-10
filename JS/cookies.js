@@ -3,6 +3,7 @@ export const cookies = () => {
         const modalCookies = new bootstrap.Modal(document.getElementById("modal-cookies"));
         const aceptarBtn = document.getElementById("aceptar");
         const rechazarBtn = document.getElementById("rechazar");
+        
             
         // Verificar si el usuario ya aceptó o rechazó las cookies
         if (!localStorage.getItem("cookieValue")) {
@@ -24,7 +25,7 @@ export const cookies = () => {
 }
 
 export const LOAD = () => {  
-    const pUser = document.getElementById('user');
+        const pUser = document.getElementById('user');
         const btnLogout = document.getElementById('logout');        
 
         if (localStorage.getItem("username") !== null) {

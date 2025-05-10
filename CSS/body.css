@@ -278,3 +278,7 @@ footer {
 		right: 20px;
 	}
 } 
+
+iframe {
+    border-radius: 15px;
+}
